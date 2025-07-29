@@ -23,7 +23,7 @@ public class Util {
     }
 
     // Método para validar CPF: verifica se tem 11 dígitos numéricos
-    public static boolean validarCPF(String cpf) {
+    public static boolean validarCpf(String cpf) {
         // Simplificação: apenas verifica se tem 11 dígitos e são todos números
         return cpf != null && cpf.matches("\\d{11}");
     }
@@ -38,4 +38,6 @@ public class Util {
     public static String gerarIdUnico() {
         return String.valueOf(nextId++); // Incrementa e retorna o próximo ID
     }
+
+
 }

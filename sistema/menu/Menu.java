@@ -71,7 +71,14 @@ public class Menu {
         String clienteNome = entrada.lerString("Nome: ");
         String clienteEmail = entrada.lerString("Email: ");
         String clienteSenha = entrada.lerString("Senha: ");
+
         String clienteCpf = entrada.lerString("CPF: ");
+        // Verifica se o CPF é válido (opcional, pode ser implementado)
+        if (!Util.validarCpf(clienteCpf)) {
+            System.out.println("CPF inválido. Por favor, insira um CPF válido.");
+            return; // Encerra o cadastro se o CPF for inválido
+        }
+
         String clienteEndereco = entrada.lerString("Endereço: ");
 
         Cliente cliente = new Cliente(
