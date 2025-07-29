@@ -1,5 +1,5 @@
 // Classe Administrador: representa um administrador do sistema, herda de Usuario
-package com.sistema.model;
+package com.sistema.usuario;
 
 // Aqui estamos criando uma classe chamada Administrador, que representa um usuário com poderes administrativos.
 // Ela herda de Usuario, então aproveita todos os atributos e métodos da classe base.

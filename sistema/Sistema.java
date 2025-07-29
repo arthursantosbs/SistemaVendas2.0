@@ -1,13 +1,9 @@
 // Classe principal do sistema, responsável por gerenciar usuários e produtos
 package com.sistema;
 
-import com.sistema.model.Produto;
-import com.sistema.model.Usuario;
-import com.sistema.model.Administrador;
-import com.sistema.model.Vendedor;
-import com.sistema.model.Cliente;
+import com.sistema.produto.Produto;
+import com.sistema.usuario.Usuario;
 import com.sistema.service.Controlador;
-import com.sistema.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;

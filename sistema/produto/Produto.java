@@ -1,5 +1,5 @@
 // Classe abstrata Produto: serve como base para todos os tipos de produtos do sistema
-package com.sistema.model;
+package com.sistema.produto;
 
 // Uma classe abstrata não pode ser instanciada diretamente. Ela existe para ser herdada por outras classes específicas de produto.
 public abstract class Produto {
@@ -49,6 +49,24 @@ public abstract class Produto {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    /*@Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public boolean equals(Produto obj) {
+        if (this == obj)
+            return true;
+        if (this == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+
+        Produto other = (Produto) obj;
+        return Objects.equals(id, other.id);
+    }*/
 
     // Método abstrato: obriga as subclasses a implementar a exibição dos detalhes do produto
     public abstract void exibirDetalhes();

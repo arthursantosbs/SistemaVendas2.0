@@ -1,4 +1,6 @@
-package com.sistema.model;
+package com.sistema.usuario;
+
+import com.sistema.produto.Produto;
 
 import java.util.ArrayList;
 import java.util.List;

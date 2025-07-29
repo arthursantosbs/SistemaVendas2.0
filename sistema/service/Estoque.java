@@ -2,7 +2,7 @@
 package com.sistema.service;
 
 import com.sistema.model.Estocavel;
-import com.sistema.model.Produto;
+import com.sistema.produto.Produto;
 
 import java.util.ArrayList;
 import java.util.List;

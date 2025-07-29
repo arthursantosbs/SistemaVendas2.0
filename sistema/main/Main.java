@@ -1,7 +1,16 @@
-package com.sistema;
+package com.sistema.main;
 
-import com.sistema.model.*;
+import com.sistema.Sistema;
+import com.sistema.produto.Esterco;
+import com.sistema.produto.Humus;
+import com.sistema.produto.Muda;
+import com.sistema.produto.Produto;
 import com.sistema.service.Controlador;
+import com.sistema.usuario.Administrador;
+import com.sistema.usuario.Cliente;
+import com.sistema.usuario.Usuario;
+import com.sistema.usuario.Vendedor;
+import com.sistema.util.Entrada;
 import com.sistema.util.Util;
 
 import java.util.Scanner;
@@ -11,6 +20,7 @@ public class Main {
         Sistema sistema = Sistema.getInstance();
         Controlador controlador = sistema.getControlador();
         Scanner scanner = new Scanner(System.in);
+        Entrada entrada = new Entrada();
 
         System.out.println("=== SISTEMA DE VENDAS AGRÍCOLAS ===\n");
 
@@ -18,17 +28,17 @@ public class Main {
         System.out.println("\n--- CADASTRO DE USUÁRIOS ---");
 
         // Cadastrar Administrador
-        System.out.println("\nCadastrar Administrador:");
-        System.out.print("Nome: ");
-        String adminNome = scanner.nextLine();
-        System.out.print("Email: ");
-        String adminEmail = scanner.nextLine();
-        System.out.print("Senha: ");
-        String adminSenha = scanner.nextLine();
-        System.out.print("Nível de Acesso: ");
-        int adminNivelAcesso = Integer.parseInt(scanner.nextLine());
-        System.out.print("Departamento: ");
-        String adminDepartamento = scanner.nextLine();
+        System.out.println("\nCadastrar Administrador:"); //entrada a partir do sistema.entrada
+        //System.out.print("Nome: ");
+        String adminNome = entrada.lerString("Nome: ");
+        //System.out.print("Email: ");
+        String adminEmail = entrada.lerString("E-mail: ");
+        //System.out.print("Senha: ");
+        String adminSenha = entrada.lerString("Senha: ");
+        //System.out.print("Nível de Acesso: ");
+        int adminNivelAcesso = entrada.lerInt("Nível de Acesso: ");
+        //System.out.print("Departamento: ");
+        String adminDepartamento = entrada.lerString("Departamento: ");
         Administrador admin = new Administrador(
             Util.gerarIdUnico(),
             adminNome,
@@ -41,14 +51,14 @@ public class Main {
 
         // Cadastrar Vendedor
         System.out.println("\nCadastrar Vendedor:");
-        System.out.print("Nome: ");
-        String vendedorNome = scanner.nextLine();
-        System.out.print("Email: ");
-        String vendedorEmail = scanner.nextLine();
-        System.out.print("Senha: ");
-        String vendedorSenha = scanner.nextLine();
-        System.out.print("Comissão (%): ");
-        double vendedorComissao = Double.parseDouble(scanner.nextLine());
+        //System.out.print("Nome: ");
+        String vendedorNome = entrada.lerString("Nome: ");
+        //System.out.print("Email: ");
+        String vendedorEmail = entrada.lerString("Email: ");
+        //System.out.print("Senha: ");
+        String vendedorSenha = entrada.lerString("Senha: ");
+        //System.out.print("Comissão (%): ");
+        double vendedorComissao = entrada.lerDouble("Comissão (%): ");
         Vendedor vendedor = new Vendedor(
             Util.gerarIdUnico(),
             vendedorNome,
@@ -60,16 +70,17 @@ public class Main {
 
         // Cadastrar Cliente
         System.out.println("\nCadastrar Cliente:");
-        System.out.print("Nome: ");
-        String clienteNome = scanner.nextLine();
-        System.out.print("Email: ");
-        String clienteEmail = scanner.nextLine();
-        System.out.print("Senha: ");
-        String clienteSenha = scanner.nextLine();
-        System.out.print("CPF: ");
-        String clienteCpf = scanner.nextLine();
-        System.out.print("Endereço: ");
-        String clienteEndereco = scanner.nextLine();
+        //System.out.print("Nome: ");
+        String clienteNome = entrada.lerString("Nome: ");
+        //System.out.print("Email: ");
+        String clienteEmail = entrada.lerString("Email: ");
+        //System.out.print("Senha: ");
+        String clienteSenha = entrada.lerString("Senha: ");
+        //System.out.print("CPF: ");
+        String clienteCpf = entrada.lerString("CPF: ");
+        //System.out.print("Endereço: ");
+        String clienteEndereco = entrada.lerString("Endereço: ");
+
         Cliente cliente = new Cliente(
             Util.gerarIdUnico(),
             clienteNome,
@@ -85,18 +96,18 @@ public class Main {
 
         // Cadastrar Muda
         System.out.println("\nCadastrar Muda:");
-        System.out.print("Nome: ");
-        String mudaNome = scanner.nextLine();
-        System.out.print("Preço: ");
-        double mudaPreco = Double.parseDouble(scanner.nextLine());
-        System.out.print("Descrição: ");
-        String mudaDescricao = scanner.nextLine();
-        System.out.print("Espécie: ");
-        String mudaEspecie = scanner.nextLine();
-        System.out.print("Tempo de Maturação (dias): ");
-        int mudaTempoMaturacao = Integer.parseInt(scanner.nextLine());
-        System.out.print("Tipo de Solo: ");
-        String mudaTipoSolo = scanner.nextLine();
+        //System.out.print("Nome: ");
+        String mudaNome = entrada.lerString("Nome: ");
+        //System.out.print("Preço: ");
+        double mudaPreco = entrada.lerDouble("Preço: ");
+        //System.out.print("Descrição: ");
+        String mudaDescricao = entrada.lerString("Descrição: ");
+        //System.out.print("Espécie: ");
+        String mudaEspecie = entrada.lerString("Espécie: ");
+        //System.out.print("Tempo de Maturação (dias): ");
+        int mudaTempoMaturacao = entrada.lerInt("Tempo de Maturação (dias): ");
+        //System.out.print("Tipo de Solo: ");
+        String mudaTipoSolo = entrada.lerString("Tipo de solo: ");
         Muda muda = new Muda(
             Util.gerarIdUnico(),
             mudaNome,
@@ -107,23 +118,24 @@ public class Main {
             mudaTipoSolo
         );
         sistema.adicionarProdutoDisponivel(muda);
+
         System.out.print("Quantidade em Estoque para " + mudaNome + ": ");
         int mudaEstoque = Integer.parseInt(scanner.nextLine());
         controlador.adicionarProdutoEstoque(muda, mudaEstoque);
 
         // Cadastrar Húmus
         System.out.println("\nCadastrar Húmus:");
-        System.out.print("Nome: ");
-        String humusNome = scanner.nextLine();
-        System.out.print("Preço: ");
-        double humusPreco = Double.parseDouble(scanner.nextLine());
-        System.out.print("Descrição: ");
-        String humusDescricao = scanner.nextLine();
-        System.out.print("Origem: ");
-        String humusOrigem = scanner.nextLine();
-        System.out.print("Peso da Embalagem (kg): ");
-        double humusPesoEmbalagem = Double.parseDouble(scanner.nextLine());
-        System.out.print("Composição Nutricional: ");
+        //System.out.print("Nome: ");
+        String humusNome = entrada.lerString("Nome: ");
+        //System.out.print("Preço: ");
+        double humusPreco = entrada.lerDouble("Preço: ");
+        //System.out.print("Descrição: ");
+        String humusDescricao = entrada.lerString("Descrição: ")
+        //System.out.print("Origem: ");
+        String humusOrigem = entrada.lerString("Origem: ");
+        //System.out.print("Peso da Embalagem (kg): ");
+        double humusPesoEmbalagem = entrada.lerDouble("Peso da Embalagem (kg): ");
+        //System.out.print("Composição Nutricional: ");
         String humusComposicaoNutricional = scanner.nextLine();
         Humus humus = new Humus(
             Util.gerarIdUnico(),

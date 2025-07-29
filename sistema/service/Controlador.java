@@ -1,10 +1,11 @@
 // Classe Controlador: responsável por gerenciar operações do sistema, como vendas
 package com.sistema.service;
 
+import com.sistema.produto.Produto;
 import com.sistema.model.*;
+import com.sistema.usuario.Cliente;
+import com.sistema.usuario.Vendedor;
 import com.sistema.util.Util;
-
-import java.util.List;
 
 public class Controlador {
     // Instância única da classe (padrão Singleton)

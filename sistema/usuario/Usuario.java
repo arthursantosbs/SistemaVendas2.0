@@ -1,5 +1,7 @@
 // Classe abstrata Usuario: serve como base para todos os tipos de usuários do sistema
-package com.sistema.model;
+package com.sistema.usuario;
+
+import java.util.Objects;
 
 // Uma classe abstrata não pode ser instanciada diretamente, ou seja, não podemos criar um "Usuario" genérico.
 // Ela existe para ser herdada por outras classes, como Administrador, Vendedor e Cliente.
@@ -50,6 +52,24 @@ public abstract class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+   /* @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+         if (this == null)
+            return false;
+         if (getClass() != obj.getClass())
+            return false;
+
+        Usuario other = (Usuario) obj;
+        return Objects.equals(id, other.id);
+    }*/
 
     // Método abstrato: obriga as subclasses a implementar a exibição dos detalhes do usuário
     public abstract void exibirDetalhes();

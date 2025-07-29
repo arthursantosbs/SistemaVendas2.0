@@ -1,5 +1,8 @@
 // Classe Esterco: representa um tipo de produto orgânico, herda de Produto e implementa Vendavel e Estocavel
-package com.sistema.model;
+package com.sistema.produto;
+
+import com.sistema.model.Estocavel;
+import com.sistema.model.Vendavel;
 
 // Aqui estamos criando uma classe chamada Esterco, que representa um produto orgânico no sistema.
 // Ela herda de Produto (ou seja, é um tipo de produto) e implementa as interfaces Vendavel e Estocavel,
