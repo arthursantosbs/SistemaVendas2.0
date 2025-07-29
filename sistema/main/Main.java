@@ -130,7 +130,7 @@ public class Main {
         //System.out.print("Preço: ");
         double humusPreco = entrada.lerDouble("Preço: ");
         //System.out.print("Descrição: ");
-        String humusDescricao = entrada.lerString("Descrição: ")
+        String humusDescricao = entrada.lerString("Descrição: ");
         //System.out.print("Origem: ");
         String humusOrigem = entrada.lerString("Origem: ");
         //System.out.print("Peso da Embalagem (kg): ");
