@@ -50,23 +50,20 @@ public abstract class Produto {
         this.descricao = descricao;
     }
 
-    /*@Override
-    public int hashCode() {
-        return Objects.hash(id);
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Produto produto = (Produto) obj;
+
+        return id != null ? id.equals(produto.id) : produto.id == null;
     }
 
     @Override
-    public boolean equals(Produto obj) {
-        if (this == obj)
-            return true;
-        if (this == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-
-        Produto other = (Produto) obj;
-        return Objects.equals(id, other.id);
-    }*/
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
+    }
 
     // Método abstrato: obriga as subclasses a implementar a exibição dos detalhes do produto
     public abstract void exibirDetalhes();
