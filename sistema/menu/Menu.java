@@ -35,10 +35,29 @@ public class Menu {
         // Cadastrar Administrador
         System.out.println("\nCadastrar Administrador:"); //entrada a partir do sistema.entrada
         String adminNome = entrada.lerString("Nome: ");
+
         String adminEmail = entrada.lerString("E-mail: ");
+        //verificar se o email é válido (opcional, pode ser implementado)
+        if (!Util.validarEmail(adminEmail)) {
+            System.out.println("Email inválido. Por favor, insira um email válido.");
+            return; // Encerra o cadastro se o email for inválido
+        }
+
         String adminSenha = entrada.lerString("Senha: ");
+        //
         int adminNivelAcesso = entrada.lerInt("Nível de Acesso: ");
+        // Verifica se o nível de acesso é válido (opcional, pode ser implementado)
+        if (adminNivelAcesso < 1 || adminNivelAcesso > 10){
+            System.out.println("Nível de acesso inválido. Por favor, insira um nível entre 1 e 10.");
+            return; // Encerra o cadastro se o nível de acesso for inválido
+        }
+
         String adminDepartamento = entrada.lerString("Departamento: ");
+        // Verifica se o departamento não está vazio (opcional, pode ser implementado)
+        if (adminDepartamento.isEmpty()) {
+            System.out.println("Departamento inválido. Por favor, insira um departamento válido.");
+            return; // Encerra o cadastro se o departamento for inválido
+        }
 
         Administrador admin = new Administrador(
                 Util.gerarIdUnico(),
@@ -54,7 +73,17 @@ public class Menu {
         System.out.println("\nCadastrar Vendedor:");
         String vendedorNome = entrada.lerString("Nome: ");
         String vendedorEmail = entrada.lerString("Email: ");
+        // Verifica se o email é válido (opcional, pode ser implementado)
+        if (!Util.validarEmail(vendedorEmail)) {
+            System.out.println("Email inválido. Por favor, insira um email válido.");
+            return; // Encerra o cadastro se o email for inválido
+        }
         String vendedorSenha = entrada.lerString("Senha: ");
+        // Verifica se a senha atende aos critérios mínimos (opcional, pode ser implementado)
+        //if (!Util.validarSenha(vendedorSenha)) {
+        //    System.out.println("Senha inválida. A senha deve ter pelo menos 6 caracteres.");
+        //    return; // Encerra o cadastro se a senha for inválida
+        //}
         double vendedorComissao = entrada.lerDouble("Comissão (%): ");
 
         Vendedor vendedor = new Vendedor(
@@ -70,6 +99,11 @@ public class Menu {
         System.out.println("\nCadastrar Cliente:");
         String clienteNome = entrada.lerString("Nome: ");
         String clienteEmail = entrada.lerString("Email: ");
+        // Verifica se o email é válido (opcional, pode ser implementado)
+        if (!Util.validarEmail(vendedorEmail)) {
+            System.out.println("Email inválido. Por favor, insira um email válido.");
+            return; // Encerra o cadastro se o email for inválido
+        }
         String clienteSenha = entrada.lerString("Senha: ");
 
         String clienteCpf = entrada.lerString("CPF: ");
@@ -80,6 +114,11 @@ public class Menu {
         }
 
         String clienteEndereco = entrada.lerString("Endereço: ");
+        // Verifica se o endereço não está vazio (opcional, pode ser implementado)
+        if (clienteEndereco.isEmpty()) {
+            System.out.println("Endereço inválido. Por favor, insira um endereço válido.");
+            return; // Encerra o cadastro se o endereço for inválido
+        }
 
         Cliente cliente = new Cliente(
                 Util.gerarIdUnico(),
