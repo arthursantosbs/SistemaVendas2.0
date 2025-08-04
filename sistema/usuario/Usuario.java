@@ -71,7 +71,8 @@ public abstract class Usuario {
     public int hashCode() {
         return Objects.hash(id);
     }
-
+    */
     // Método abstrato: obriga as subclasses a implementar a exibição dos detalhes do usuário
     public abstract void exibirDetalhes();
+
 }

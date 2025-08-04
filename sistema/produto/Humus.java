@@ -61,6 +61,9 @@ public class Humus extends Produto implements Vendavel, Estocavel {
         System.out.println("Composição Nutricional: " + composicaoNutricional);
         System.out.println("Preço: R$ " + getPreco());
         System.out.println("Estoque: " + quantidadeEstoque);
+        System.out.println("ID ÚNICO: " + getId());
+        System.out.println("Descrição: " + getDescricao());
+        System.out.println("-----------------------------");
     }
 
     @Override

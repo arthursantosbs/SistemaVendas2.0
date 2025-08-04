@@ -71,7 +71,7 @@ public class Cliente extends Usuario {
     }
 
     // Exibe os detalhes do cliente e informações do carrinho
-    @Override
+
     public void exibirDetalhes() {
         System.out.println("Cliente: " + getNome());
         System.out.println("Email: " + getEmail());

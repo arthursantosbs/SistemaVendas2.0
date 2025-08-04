@@ -40,7 +40,10 @@ public class Vendedor extends Usuario {
     }
 
     // Exibe os detalhes do vendedor na tela
+
+
     @Override
+
     public void exibirDetalhes() {
         System.out.println("Vendedor: " + getNome());
         System.out.println("Email: " + getEmail());

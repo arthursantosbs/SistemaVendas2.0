@@ -83,6 +83,19 @@ public class Sistema {
             System.out.println("----------------------------------------");
         }
     }
+    public void atualizarProdutoDisponivel(Produto produtoAtualizado) {
+        // Busca o produto pelo ID e atualiza seus dados
+        Optional<Produto> produtoExistente = produtosDisponiveis.stream()
+                .filter(p -> p.getId().equals(produtoAtualizado.getId()))
+                .findFirst();
+        if (produtoExistente.isPresent()) {
+            int index = produtosDisponiveis.indexOf(produtoExistente.get());
+            produtosDisponiveis.set(index, produtoAtualizado); // Atualiza o produto na lista
+            System.out.println("Produto " + produtoAtualizado.getNome() + " atualizado com sucesso.");
+        } else {
+            System.out.println("Produto não encontrado para atualização.");
+        }
+    }
 
     // Métodos getters para acessar os atributos privados
     public Controlador getControlador() {

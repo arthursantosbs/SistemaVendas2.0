@@ -61,6 +61,9 @@ public class Esterco extends Produto implements Vendavel, Estocavel {
         System.out.println("Nível de Acidez: " + nivelAcidez);
         System.out.println("Preço: R$ " + getPreco());
         System.out.println("Estoque: " + quantidadeEstoque);
+        System.out.println("ID ÚNICO: " + getId());
+        System.out.println("Descrição: " + getDescricao());
+        System.out.println("-----------------------------");
     }
 
     // Cálculo do preço final do esterco, considerando o tipo de processamento
