@@ -53,26 +53,20 @@ public abstract class Usuario {
         this.senha = senha;
     }
 
-   /* @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-
-        Usuario other = (Usuario) obj;
-        return Objects.equals(id, other.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-    */
-    // Método abstrato: obriga as subclasses a implementar a exibição dos detalhes do usuário
     public abstract void exibirDetalhes();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(id, usuario.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
 }
