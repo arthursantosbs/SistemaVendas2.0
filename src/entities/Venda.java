@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class Venda {
-    private Long id;
+    private static int contadorDeId = 0;
+    private int id;
     private Cliente cliente;
     private Vendedor vendedor;
     private List<Produto> produtos;
@@ -14,7 +15,7 @@ public class Venda {
     public Venda() {}
 
     public Venda(Long id, Cliente cliente, Vendedor vendedor, List<Produto> produtos, double total) {
-        this.id = id;
+        this.id = ++contadorDeId;
         this.cliente = cliente;
         this.vendedor = vendedor;
         this.produtos = produtos;
@@ -22,8 +23,8 @@ public class Venda {
     }
 
     // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
     public Cliente getCliente() { return cliente; }
     public void setCliente(Cliente cliente) { this.cliente = cliente; }
     public Vendedor getVendedor() { return vendedor; }

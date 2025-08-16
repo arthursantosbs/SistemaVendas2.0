@@ -5,7 +5,7 @@ public class Vendedor extends Usuario {
     private double totalVendas;
 
     public Vendedor() {}
-    public Vendedor(Long id, String nome, String email, String senha, String cnpj, double totalVendas) {
+    public Vendedor(int id, String nome, String email, String senha, String cnpj, double totalVendas) {
         super(id, nome, email, senha);
         this.cnpj = cnpj;
         this.totalVendas = totalVendas;

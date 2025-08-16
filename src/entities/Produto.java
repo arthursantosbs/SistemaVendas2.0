@@ -4,7 +4,9 @@ package com.src.entities;
 import java.util.Objects;
 
 public abstract class Produto {
-    private Long id;
+    private static Integer contadorDeId = 0;
+
+    private Integer id;
     private String nome;
     private double preco;
     private String descricao;
@@ -13,8 +15,8 @@ public abstract class Produto {
     public Produto() {
     }
 
-    public Produto(Long id, String nome, double preco, String descricao, int quantidade) {
-        this.id = id;
+    public Produto(int id, String nome, double preco, String descricao, int quantidade) {
+        this.id = ++contadorDeId;
         this.nome = nome;
         this.preco = preco;
         this.descricao = descricao;
@@ -22,13 +24,11 @@ public abstract class Produto {
     }
 
     // Getters and Setters
-    public Long getId() {
-        return id;
+    public int getId() {
+        return this.id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+
 
     public String getNome() {
         return nome;

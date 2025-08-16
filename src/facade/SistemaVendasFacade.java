@@ -2,16 +2,16 @@ package com.src.facade;
 
 
 
-import entities.*;
-import repository.ProdutoRepository;
-import repository.UsuarioRepository;
-import repository.VendaRepository;
-import repository.impl.ProdutoRepositoryImpl;
-import repository.impl.UsuarioRepositoryImpl;
-import repository.impl.VendaRepositoryImpl;
-import service.impl.ProdutoServiceImpl;
-import service.impl.UsuarioServiceImpl;
-import service.impl.VendaServiceImpl;
+import com.src.entities.*;
+import com.src.repository.ProdutoRepository;
+import com.src.repository.UsuarioRepository;
+import com.src.repository.VendaRepository;
+import com.src.repository.impl.ProdutoRepositoryImpl;
+import com.src.repository.impl.UsuarioRepositoryImpl;
+import com.src.repository.impl.VendaRepositoryImpl;
+import com.src.service.impl.ProdutoServiceImpl;
+import com.src.service.impl.UsuarioServiceImpl;
+import com.src.service.impl.VendaServiceImpl;
 import java.util.List;
 
 public class SistemaVendasFacade {
@@ -33,7 +33,7 @@ public class SistemaVendasFacade {
         produtoServiceImpl.createProduto(produto);
     }
 
-    public Produto getProduto(Long id) {
+    public Produto getProduto(Integer id) {
         return produtoServiceImpl.getProduto(id);
     }
 
@@ -45,7 +45,7 @@ public class SistemaVendasFacade {
         produtoServiceImpl.updateProduto(produto);
     }
 
-    public void deleteProduto(Long id) {
+    public void deleteProduto(Integer id) {
         produtoServiceImpl.deleteProduto(id);
     }
 
@@ -54,7 +54,7 @@ public class SistemaVendasFacade {
         usuarioServiceImpl.createUsuario(usuario);
     }
 
-    public Usuario getUsuario(Long id) {
+    public Usuario getUsuario(int id) {
         return usuarioServiceImpl.getUsuario(id);
     }
 
@@ -66,7 +66,7 @@ public class SistemaVendasFacade {
         usuarioServiceImpl.updateUsuario(usuario);
     }
 
-    public void deleteUsuario(Long id) {
+    public void deleteUsuario(int id) {
         usuarioServiceImpl.deleteUsuario(id);
     }
 
@@ -75,7 +75,7 @@ public class SistemaVendasFacade {
         vendaServiceImpl.createVenda(venda);
     }
 
-    public Venda getVenda(Long id) {
+    public Venda getVenda(int id) {
         return vendaServiceImpl.getVenda(id);
     }
 
@@ -87,7 +87,7 @@ public class SistemaVendasFacade {
         vendaServiceImpl.updateVenda(venda);
     }
 
-    public void deleteVenda(Long id) {
+    public void deleteVenda(int id) {
         vendaServiceImpl.deleteVenda(id);
     }
 }
