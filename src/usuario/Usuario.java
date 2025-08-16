@@ -1,7 +1,5 @@
 // Classe abstrata Usuario: serve como base para todos os tipos de usuários do sistema
-package com.sistema.usuario;
-
-import java.util.Objects;
+package com.src.usuario;
 
 // Uma classe abstrata não pode ser instanciada diretamente, ou seja, não podemos criar um "Usuario" genérico.
 // Ela existe para ser herdada por outras classes, como Administrador, Vendedor e Cliente.

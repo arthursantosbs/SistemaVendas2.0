@@ -1,11 +1,11 @@
-package com.sistema.menu;
+package com.src.menu;
 
-import com.sistema.Sistema;
-import com.sistema.produto.*;
-import com.sistema.service.Controlador;
-import com.sistema.usuario.*;
-import com.sistema.util.Entrada;
-import com.sistema.util.Util;
+import com.src.Sistema;
+import com.src.produto.*;
+import com.src.service.Controlador;
+import com.src.usuario.*;
+import com.src.util.Entrada;
+import com.src.util.Util;
 
 import java.util.Scanner;
 
@@ -58,7 +58,7 @@ public class Menu {
                     gerarRelatorioVendedor();
                     break;
                 case 7:
-
+                    atualizarProdutoExistente();
                 case 0:
                     System.out.println("Saindo do sistema...");
                     break;
@@ -220,9 +220,10 @@ public class Menu {
             String mudaEsp = entrada.lerString("Espécie: ");
             int mudaMatur = entrada.lerInt("Tempo de Maturação (dias): ");
             String mudaSolo = entrada.lerString("Tipo de solo: ");
-            Muda muda = new Muda(produto.getId(), mudaNome, mudaPreco, mudaDesc, mudaEsp, mudaMatur, mudaSolo);
 
-            controlador.adicionarProdutoEstoque(muda, entrada.lerInt("Quantidade em Estoque: "));
+            Muda muda = new Muda(produto.getId(), mudaNome, mudaPreco, mudaDesc, mudaEsp, mudaMatur, mudaSolo);
+            sistema.atualizarProdutoDisponivel(muda);
+
 
         }else if ((produto instanceof Humus)) {
             String humusNome = entrada.lerString("Nome: ");
@@ -233,7 +234,7 @@ public class Menu {
             String humusComp = entrada.lerString("Composição Nutricional: ");
             Humus humus = new Humus(produto.getId(), humusNome, humusPreco, humusDesc, humusOrigem, humusPeso, humusComp);
 
-            controlador.adicionarProdutoEstoque(humus, entrada.lerInt("Quantidade em Estoque: "));
+            sistema.atualizarProdutoDisponivel(humus);
 
         } else if ((produto instanceof Esterco)) {
             String estNome = entrada.lerString("Nome: ");
@@ -244,12 +245,10 @@ public class Menu {
             double estAcidez = entrada.lerDouble("Nível de Acidez: ");
             Esterco esterco = new Esterco(produto.getId(), estNome, estPreco, estDesc, estAnimal, estProc, estAcidez);
 
-            controlador.adicionarProdutoEstoque(esterco, entrada.lerInt("Quantidade em Estoque: "));
+            sistema.atualizarProdutoDisponivel(esterco);
         } else {
             System.out.println("Tipo de produto não suportado para atualização.");
         }
-        sistema.atualizarProdutoDisponivel(produto);
-
 
 
     }

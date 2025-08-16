@@ -1,5 +1,5 @@
 // Classe abstrata Produto: serve como base para todos os tipos de produtos do sistema
-package com.sistema.produto;
+package com.src.produto;
 
 // Uma classe abstrata não pode ser instanciada diretamente. Ela existe para ser herdada por outras classes específicas de produto.
 public abstract class Produto {

@@ -1,5 +1,5 @@
 // Classe Util: contém métodos utilitários para facilitar operações comuns no sistema
-package com.sistema.util;
+package com.src.util;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;

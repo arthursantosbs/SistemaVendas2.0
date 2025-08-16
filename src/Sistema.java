@@ -1,9 +1,9 @@
 // Classe principal do sistema, responsável por gerenciar usuários e produtos
-package com.sistema;
+package com.src;
 
-import com.sistema.produto.Produto;
-import com.sistema.usuario.Usuario;
-import com.sistema.service.Controlador;
+import com.src.produto.Produto;
+import com.src.usuario.Usuario;
+import com.src.service.Controlador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,16 +84,20 @@ public class Sistema {
         }
     }
     public void atualizarProdutoDisponivel(Produto produtoAtualizado) {
-        // Busca o produto pelo ID e atualiza seus dados
+        apagarProdutoDisponivel(produtoAtualizado.getId());
+        // Adiciona o produto atualizado à lista de disponíveis
+        adicionarProdutoDisponivel(produtoAtualizado);
+    }
+    public void apagarProdutoDisponivel(String id) {
+        // Busca o produto pelo ID e remove da lista
         Optional<Produto> produtoExistente = produtosDisponiveis.stream()
-                .filter(p -> p.getId().equals(produtoAtualizado.getId()))
+                .filter(p -> p.getId().equals(id))
                 .findFirst();
         if (produtoExistente.isPresent()) {
-            int index = produtosDisponiveis.indexOf(produtoExistente.get());
-            produtosDisponiveis.set(index, produtoAtualizado); // Atualiza o produto na lista
-            System.out.println("Produto " + produtoAtualizado.getNome() + " atualizado com sucesso.");
+            produtosDisponiveis.remove(produtoExistente.get()); // Remove o produto da lista
+            System.out.println("Produto " + produtoExistente.get().getNome() + " removido com sucesso.");
         } else {
-            System.out.println("Produto não encontrado para atualização.");
+            System.out.println("Produto não encontrado para remoção.");
         }
     }
 

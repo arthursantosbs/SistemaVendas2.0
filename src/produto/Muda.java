@@ -1,8 +1,8 @@
 // Classe Muda: representa uma muda de planta, herda de Produto e implementa Vendavel e Estocavel
-package com.sistema.produto;
+package com.src.produto;
 
-import com.sistema.model.Estocavel;
-import com.sistema.model.Vendavel;
+import com.src.model.Estocavel;
+import com.src.model.Vendavel;
 
 // Aqui estamos criando uma classe chamada Muda, que representa uma muda de planta no sistema.
 // Ela herda de Produto (ou seja, é um tipo de produto) e implementa as interfaces Vendavel e Estocavel,

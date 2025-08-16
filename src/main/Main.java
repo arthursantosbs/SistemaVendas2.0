@@ -1,6 +1,6 @@
-package com.sistema.main;
+package com.src.main;
 
-import com.sistema.menu.Menu;
+import com.src.menu.Menu;
 
 
 public class Main {

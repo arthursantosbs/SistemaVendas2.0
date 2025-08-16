@@ -1,5 +1,5 @@
 // Classe Vendedor: representa um vendedor no sistema, herda de Usuario
-package com.sistema.usuario;
+package com.src.usuario;
 
 public class Vendedor extends Usuario {
     // Porcentagem de comissão que o vendedor recebe sobre as vendas

@@ -1,6 +1,6 @@
-package com.sistema.menu;
+package com.src.menu;
 
-import com.sistema.Sistema;
+import com.src.Sistema;
 
 import javax.swing.*;
 import java.awt.*;

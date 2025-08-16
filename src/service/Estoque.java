@@ -1,8 +1,8 @@
 // Classe Estoque: gerencia os produtos armazenados e suas quantidades
-package com.sistema.service;
+package com.src.service;
 
-import com.sistema.model.Estocavel;
-import com.sistema.produto.Produto;
+import com.src.model.Estocavel;
+import com.src.produto.Produto;
 
 import java.util.ArrayList;
 import java.util.List;

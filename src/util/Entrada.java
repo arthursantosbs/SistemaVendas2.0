@@ -1,4 +1,4 @@
-package com.sistema.util;
+package com.src.util;
 
 import java.util.Scanner;
 

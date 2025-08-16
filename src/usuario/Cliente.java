@@ -1,6 +1,6 @@
-package com.sistema.usuario;
+package com.src.usuario;
 
-import com.sistema.produto.Produto;
+import com.src.produto.Produto;
 
 import java.util.ArrayList;
 import java.util.List;

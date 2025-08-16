@@ -1,5 +1,5 @@
 // Interface Vendavel: define o contrato para produtos que podem ser vendidos
-package com.sistema.model;
+package com.src.model;
 
 // Uma interface em Java é como um conjunto de regras que as classes devem seguir.
 // Aqui, qualquer classe que "implements Vendavel" precisa fornecer a lógica para vender produtos.

@@ -1,5 +1,5 @@
 // Interface Estocavel: define o contrato para produtos que podem ser estocados
-package com.sistema.model;
+package com.src.model;
 
 // Uma interface em Java funciona como um conjunto de regras que as classes devem seguir.
 // Qualquer classe que "implements Estocavel" precisa fornecer a lógica para controlar o estoque.

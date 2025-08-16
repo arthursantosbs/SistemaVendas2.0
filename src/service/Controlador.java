@@ -1,11 +1,11 @@
 // Classe Controlador: responsável por gerenciar operações do sistema, como vendas
-package com.sistema.service;
+package com.src.service;
 
-import com.sistema.produto.Produto;
-import com.sistema.model.*;
-import com.sistema.usuario.Cliente;
-import com.sistema.usuario.Vendedor;
-import com.sistema.util.Util;
+import com.src.produto.Produto;
+import com.src.model.*;
+import com.src.usuario.Cliente;
+import com.src.usuario.Vendedor;
+import com.src.util.Util;
 
 public class Controlador {
     // Instância única da classe (padrão Singleton)
